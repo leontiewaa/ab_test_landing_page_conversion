@@ -1,50 +1,62 @@
 # 🧪 A/B Test Analysis: Landing Page Conversion
 
-Анализ результатов A/B теста для определения целесообразности внедрения нового дизайна посадочной страницы.
+Statistical analysis of an A/B test to determine whether a new landing page design has a significant impact on conversion rate.
 
 ---
 
-## 📋 О проекте
+## 📋 Project Overview
 
-Интернет-магазин протестировал новый дизайн посадочной страницы. Задача — определить, влияет ли новый дизайн на конверсию в покупку, и стоит ли его внедрять.
+An e-commerce company tested a redesigned landing page. The goal was to determine whether the new design statistically significantly affects the conversion rate and whether it should be rolled out to all users.
 
-**Гипотезы:**
-- **H₀:** Новый дизайн не влияет на конверсию — разница между группами случайна
-- **H₁:** Новый дизайн изменил конверсию в любую сторону
-- **Уровень значимости:** α = 0.05
-
----
-
-## 🔧 Что делала
-
-- **Очистка данных** — удалила дубли пользователей (3894 записи) и строки с ошибочным соответствием группы и страницы (2044 записи)
-- **Разведочный анализ** — оценила размер групп и конверсию по каждой группе
-- **Статистический тест** — применила z-test для пропорций, получила p-value
+**Hypotheses:**
+- **H₀:** The new design has no effect on conversion rate — the difference between groups is random
+- **H₁:** The new design changed the conversion rate in either direction
+- **Significance level:** α = 0.05
 
 ---
 
-## 📊 Результаты
+## 🔧 What I Did
 
-| Группа | Пользователей | Конверсий | Конверсия |
-|--------|--------------|-----------|-----------|
-| Control (старая страница) | 144 226 | 17 349 | 12.03% |
-| Treatment (новая страница) | 144 314 | 17 134 | 11.87% |
-
-**p-value = 0.195** — выше порога 0.05
+- **Data cleaning** — removed duplicate users (3,894 records) and rows with mismatched group/page assignments (2,044 records)
+- **Exploratory data analysis** — assessed group sizes and conversion rates per group
+- **Statistical testing** — applied a two-proportion z-test and interpreted the p-value
 
 ---
 
-## 💡 Вывод
+## 📊 Results
 
-Статистически значимых доказательств влияния нового дизайна на конверсию не обнаружено. Разница в 0.16 п.п. между группами может быть случайной.
+| Group | Users | Conversions | Conversion Rate |
+|-------|-------|-------------|-----------------|
+| Control (old page) | 144,226 | 17,349 | 12.03% |
+| Treatment (new page) | 144,314 | 17,134 | 11.87% |
 
-**Рекомендации:**
-1. Убедиться что тест был завершён в запланированный срок, а не остановлен раньше
-2. Рассчитать необходимый размер выборки через power analysis перед следующим тестом
-3. Провести повторный тест с правильно рассчитанной выборкой
+**p-value = 0.195** — above the 0.05 threshold
 
 ---
 
-## 🛠 Стек
+## 💡 Conclusion
+
+No statistically significant evidence was found that the new design affects conversion rate. The 0.16 p.p. difference between groups is likely due to random variation.
+
+**Recommendations:**
+1. Verify that the test ran for its full planned duration and was not stopped early (peeking problem)
+2. Calculate the required sample size via power analysis before the next test
+3. Run a follow-up test with a properly calculated sample size
+
+---
+
+## 🛠️ Stack
 
 `Python` `pandas` `numpy` `statsmodels`
+
+---
+
+## 📂 Data Source
+
+[A/B Testing Dataset](https://www.kaggle.com/datasets/zhangluyuan/ab-testing) — Kaggle
+
+---
+
+## 📅 Status
+
+✅ Completed — June 2026
